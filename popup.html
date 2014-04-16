@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/background.js"></script>-->
+    <script type="text/javascript" src="js/popup.js"></script>
+    <style>
+        #content {
+            width: 200px;
+        }
+        #vk, #gmail, #facebook {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        #content a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            text-decoration: none;
+            color: #5A5858;
+        }
+        #content p {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="gmail">
+            <a href="https://mail.google.com/mail/" target="_blank">
+                <span class="title">Gmail new messages: </span><span id="gmail_count" >0</span>
+            </a>
+        </div>
+        <div id="vk">
+            <a href="https://vk.com/im" target="_blank">
+                <span class="title">VK (messages): </span><span id="vk_count">0</span>
+            </a>
+        </div>
+        <div id="facebook">
+            <a href="https://www.facebook.com/" target="_blank">
+                <span class="title">Facebook: </span><span id="fb_count">0</span>
+            </a>
+        </div>
+        <p><a target="_blank" href="https://www.facebook.com/dialog/oauth?client_id=199493976841002&response_type=token&scope=manage_notifications,user_activities,read_requests,read_mailbox&redirect_uri=http://www.facebook.com/connect/login_success.html">Facebook Connect</a></p>
+    </div>
+</body>
+</html>
