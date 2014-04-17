@@ -14,11 +14,11 @@
     "options_page": "options.html",
 
     "background": {
-    "scripts": [
-        "js/jquery-1.11.0.min.js",
-        "js/background.js"
-
-    ]
+        "page": //[
+            //"js/jquery-1.11.0.min.js",
+            //"js/background.js"
+            "background.html"
+        //]
     },
     "description": "Check social networks and mail systems on some new notifications for You!",
     "icons": {
@@ -26,19 +26,33 @@
       "16": "img/icon-16.png",
       "48": "img/icon-48.png"
     },
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+    "content_scripts": [
+        {
+            "matches": [ "https://*.facebook.com/desktop_notifications/popup.php*" ],
+            "js": [ "js/myhack.js" ],
+            "all_frames": true
+        }
+    ],
+
+    //"content_security_policy": "script-src 'self' https://connect.facebook.net/en_US/all.js; object-src 'self'",
+    //"content_security_policy":
+    //    "script-src 'self' https://platform.twitter.com https://cdn.api.twitter.com https://syndication.twimg.com http://connect.facebook.net/; object-src 'self'",
+
+    //"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    //"content_security_policy": "default-src 'self' 'unsafe-eval' chrome-extension-resource: https://*.vk.com/ https://*.facebook.net https://*.facebook.com https://mail.google.com/; style-src 'self' 'unsafe-inline' chrome-extension-resource: https://*.facebook.net https://*.facebook.com https://mail.google.com/; frame-src 'self' 'unsafe-inline' chrome-extension-resource: https://*.facebook.net https://*.facebook.com https://mail.google.com/ https://*.vk.com/",
 
     "permissions": [
-        "contextMenus",
         "tabs",
-        "storage" ,
-        "http://*.vk.com/",
-        "https://*.vk.com/",
-        "http://*.facebook.com/",
-        "https://*.facebook.com/",
-        //"http://*/*",
-        //"https://*/*",
-        "https://mail.google.com/",
-        "http://mail.google.com/"
+        "notifications",
+        "storage",
+        //"http://*.vk.com/",
+        //"https://*.vk.com/",
+        //"http://*.facebook.com/",
+        //"https://*.facebook.com/",
+        "http://*/*",
+        "https://*/*"
+        //"https://mail.google.com/",
+        //"http://mail.google.com/"
     ]
 }

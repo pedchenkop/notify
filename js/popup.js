@@ -11,7 +11,7 @@ $(document).ready(function() {
     if(total_count > 0) chrome.browserAction.setBadgeText({text: total_count.toString()});
 
     if (localStorage.accessToken) {
-        var graphUrl = "https://graph.facebook.com/me/notifications?" + localStorage.accessToken + "&callback=displayUser";
+        var graphUrl = "https://graph.facebook.com/me/notifications?" + localStorage.accessToken;
         console.log(graphUrl);
 
     }
